@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 1.Створити розмітку з кнопкою та текстовим полем. 
+  За допомогою JavaScript отримати доступ до кнопки та текстового поля за їх ідентифікаторами
+   та змінити текст на кнопці на значення текстового поля.-->
+<button id="simple-button" style="display: block; height: 40px; margin-bottom: 25px;">(...)</button>
+<textarea name="" id="simple-area" cols="30" rows="10" style="display: block;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+
+
+ <!-- 2.Створити розмітку з заголовком та зображенням.
+  За допомогою JavaScript отримати доступ до зображення
+   та змінити значення атрибута "src" на шлях до іншого зображення. -->
+<h2 style="display: block; margin-top: 100px;">Upgrade</h2>
+<img id="sword" src="https://lh3.bunny.novaskin.me/0mRhBi5V75SPD1YVYiUxeF5wCcmBqc91cBfmzfID6csmPLQlxxxqU9xbRzbnqhSV6DQdOmHVY6aalbYd-t0PH_PvNIhY_Mgb-oI=rw-h400" alt="changing_image">
+
+
+<!--  3.Створити розмітку з посиланням та зображенням.
+  За допомогою JavaScript отримати доступ до посилання
+   та змінити значення атрибута "href" на нову URL-адресу.
+    Також отримати доступ до зображення та додати новий атрибут "alt" з описом зображення.-->
+
+<a id="myLink" href="https://www.google.com/" style="display: block; margin-top: 100px; margin-bottom: 10px; font-size: 22px;">Google LLC. or not?</a>
+<img id="coldBlooded" src="https://i.redd.it/girwqat73tw61.jpg" alt="raptor">
+
+ <!-- 4.Створити розмітку зі списком елементів.
+  За допомогою JavaScript отримати доступ до першого елемента списку
+   та змінити його вміст на новий текст.  -->
+<ul id="myList" style="margin-top: 100px; font-weight: 600; font-size: 26px;">
+    <li id="firstItem">Roll out!</li>
+    <li>Yes, Sir!</li>
+</ul>
+
+<script>
+    // 1
+const button = document.getElementById('simple-button');
+const textarea = document.getElementById('simple-area');
+button.textContent = textarea.textContent;
+
+// 2
+const sword = document.getElementById('sword');
+sword.src = 'https://www.nicepng.com/png/detail/154-1548050_minecraft-diamond-sword-diamond-sword.png';
+
+// 3
+const myLink  = document.getElementById('myLink');
+const coldBlooded = document.getElementById('coldBlooded');
+myLink.href = 'https://www.bing.com/';
+coldBlooded.alt = 'gentleman-raptor';
+
+// 4
+// const firstListItem = document.body.firstElementChild
+
+const firstListItem = document.querySelector('#myList li:first-child');
+if (firstListItem) {
+        firstListItem.textContent = 'Roll back!';
+    }
+
+</script>
+</body>
+</html>

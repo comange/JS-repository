@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ const firstFill = document.getElementById('firstFill');
+ const secondFill = document.getElementById('secondFill');
+ const firstNumberFill = document.getElementById('firstNumberFill');
+ const secondNumberFill = document.getElementById('secondNumberFill');
+ const javaFill = document.getElementById('javaFill');
+ const thirdNumberFill = document.getElementById('thirdNumberFill');
+ const nameFill = document.getElementById('nameFill');
+ const emailFill = document.getElementById('emailFill');
+ const passwordFill = document.getElementById('passwordFill');
+ const dynamicURL = 'https://sites.google.com/view/coffee-website/';
+
+    </script>
+</head>
+<style>
+  button, input {
+    display: block;
+  }
+
+button {
+  margin-bottom: 100px;
+}
+</style>
+<body>
+    <!-- 1.Створити розмітку з двома текстовими полями та кнопкою.
+     При натисканні на кнопку перевіряти, чи обидва поля містять значення,
+      якщо так, то виводити повідомлення "Обидва поля заповнені",
+       якщо ні — "Не всі поля заповнені". -->
+       <input type="text" id="firstFill">
+       <input type="text" id="secondFill">
+       <button onclick="if (firstFill.value.trim() !== '' && secondFill.value.trim() !== '') {alert('Обидва поля заповнені')} else {alert('Не всі поля заповнені')}">Check</button>
+
+       <!-- 2.Створити розмітку  з двома числовими полями та кнопкою.
+ При натисканні на кнопку перевіряти, чи сума значень полів більша за 10,
+  якщо так, то виводити повідомлення "Сума більша за 10",
+   якщо ні — "Сума менша або дорівнює 10". -->
+   <input type="number" id="firstNumberFill">
+   <input type="number" id="secondNumberFill">
+   <button onclick="if (parseInt(firstNumberFill.value) + parseInt(secondNumberFill.value) > 10) {alert('Сума більша за 10')}
+   else {'Сума менша або дорівнює 10'}">Check</button>
+
+   <!-- 3.Створити розмітку  з текстовим полем та кнопкою.
+ При натисканні на кнопку перевіряти, чи введений текст містить слово "JavaScript",
+  якщо так, то виводити повідомлення "Текст містить слово JavaScript",
+   якщо ні — "Текст не містить слово JavaScript". -->
+   <input type="text" id="javaFill">
+   <button onclick="if (javaFill.value.includes('JavaScript')) {alert('Текст містить слово JavaScript')}
+    else {alert('Текст не містить слово JavaScript')}">Check</button>
+
+   <!-- 4.Створити розмітку  з формою з полями введення та кнопкою.
+ При натисканні на кнопку перевіряти, чи введене число більше за 10 та менше за 20,
+  якщо так, то виводити повідомлення "Число входить в діапазон від 10 до 20",
+   якщо ні — "Число не входить в діапазон від 10 до 20". -->
+<form action="">
+    <input type="number" id="thirdNumberFill">
+    <button onclick=" if (10 < thirdNumberFill && thirdNumberFill < 20) {alert('Число входить в діапазон від 10 до 20')}
+     else {alert('Число не входить в діапазон від 10 до 20')}">Check</button>
+</form>
+
+<!-- 5.Створити розмітку  з формою з полями введення та кнопкою.
+При натисканні на кнопку перевіряти, чи введені дані правильно заповнені,
+  якщо так, то перенаправляти на іншу сторінку, якщо ні — виводити повідомлення про помилку.
+ Правильно заповнені дані: ім'я містить не менше 3 символів,
+  email містить символ @ та крапку після неї, пароль містить не менше 6 символів. -->
+  <form action="">
+    <label for="name">
+      Правильно заповнені дані: ім'я містить не менше 3 символів.
+  
+    </label>
+    <input type="text" id="nameFill">
+    <label for="email">
+      Правильно заповнені дані: email містить символ @ та крапку після неї.
+    </label>
+    <input type="text" id="emailFill">
+    <label for="password">
+      Правильно заповнені дані: пароль містить не менше 6 символів.
+    </label>
+    <input type="text" id="passwordFill">
+    <button onclick="if (nameFill.value.length >= 3 && emailFill.value.includes('@') && emailFill.value.includes('.') && passwordFill.value.length >= 6) {window.location.href = encodeURIComponent(dynamicURL)}
+     else {alert('Помилка, будь ласка, перевірте чи все правильно.')}">Check</button>
+  </form>
+  <!-- тут в 5 завданні були проблеми з тим що посилання на сайт містить // символи які починають коментар і руйнують залишившийся код. -->
+</body>
+</html>
